@@ -1,0 +1,19 @@
+{
+  "name": "file-management-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nemanja43M/togal-task.git"
+  },
+  "author": "Nemanja Markovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nemanja43M/togal-task/issues"
+  },
+  "homepage": "https://github.com/Nemanja43M/togal-task#readme"
+}
