@@ -1,19 +1,36 @@
 {
-  "name": "file-management-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Nemanja43M/togal-task.git"
-  },
-  "author": "Nemanja Markovic",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nemanja43M/togal-task/issues"
-  },
-  "homepage": "https://github.com/Nemanja43M/togal-task#readme"
+    "name": "file-management-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "ts-node src/server.ts",
+        "dev": "nodemon --exec ts-node src/server.ts",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Nemanja43M/togal-task.git"
+    },
+    "author": "Nemanja Markovic",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Nemanja43M/togal-task/issues"
+    },
+    "homepage": "https://github.com/Nemanja43M/togal-task#readme",
+    "dependencies": {
+        "@types/express": "^5.0.0",
+        "@types/multer": "^1.4.12",
+        "@types/pg": "^8.11.10",
+        "express": "^4.21.0",
+        "multer": "^1.4.5-lts.1",
+        "pg": "^8.13.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.2"
+    },
+    "devDependencies": {
+        "@types/node": "^22.7.4",
+        "nodemon": "^3.1.7"
+    }
 }
