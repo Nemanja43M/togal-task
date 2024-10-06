@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2020", // ili verzija koja ti odgovara
+        "target": "es2020",
         "module": "commonjs",
         "outDir": "./dist",
         "rootDir": "./src",
@@ -11,7 +11,9 @@
         "allowJs": true,
         "checkJs": true,
         "declaration": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"]
