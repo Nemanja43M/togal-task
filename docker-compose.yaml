@@ -11,5 +11,17 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data
 
+    file_storage:
+        image: filebrowser/filebrowser
+        ports:
+            - '8080:80'
+        volumes:
+            - ./file_storage:/srv
+        environment:
+            - FILEBROWSER_BASEURL=/filebrowser
+            - FILEBROWSER_USER=admin
+            - FILEBROWSER_PASSWORD=admin
+
 volumes:
     postgres_data:
+    file_storage:
