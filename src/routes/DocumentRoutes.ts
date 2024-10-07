@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import * as documentController from '../controllers/DocumentController';
+import { DocumentController } from '../controllers/DocumentController';
 
 const router = Router();
 
-router.post('/', documentController.create);
-router.get('/', documentController.getAll);
-router.delete('/:id', documentController.deleteDocument);
+router.post('/', DocumentController.create);
+router.get('/', DocumentController.getAll);
+router.post('/upload', DocumentController.uploadFile);
+router.delete('/:id', DocumentController.delete);
 
 export default router;

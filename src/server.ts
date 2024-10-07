@@ -5,15 +5,13 @@ import * as dotenv from 'dotenv';
 
 import folderRoutes from './routes/FolderRoutes';
 import documentRoutes from './routes/DocumentRoutes';
-import fileVersionRoutes from './routes/FileVersionRoutes';
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use('/api', folderRoutes);
-app.use('/api', documentRoutes);
-app.use('/api', fileVersionRoutes);
+app.use('/api/folders', folderRoutes);
+app.use('/api/documents', documentRoutes);
 
 AppDataSource.initialize()
     .then(() => {

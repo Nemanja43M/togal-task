@@ -3,8 +3,8 @@ import { create, getAll, deleteFolder } from '../controllers/FolderController';
 
 const router = Router();
 
-router.post('/folders', create);
-router.get('/folders', getAll);
-router.delete('/folders/:id', deleteFolder);
+router.post('/', create);
+router.get('/', getAll);
+router.delete('/:id', deleteFolder);
 
 export default router;
