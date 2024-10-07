@@ -14,7 +14,7 @@ export const createFolder = async (name: string): Promise<Folder> => {
 
 export const findAllFolders = async (): Promise<Folder[]> => {
     return await folderRepository.find({
-        relations: ['documents'],
+        relations: ['documents', 'documents.fileVersions'],
     });
 };
 export const deleteFolderById = async (id: number): Promise<void> => {
