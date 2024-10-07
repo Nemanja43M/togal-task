@@ -26,6 +26,10 @@ Password: admin
 
 npm install
 
+-   Ensure that the file_storage folder exists in the root of your application. If it does not exist, create it using the following command:
+
+mkdir file_storage
+
 -   Start the Application
     Now, you can start the application using the following command:
 
