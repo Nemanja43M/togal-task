@@ -28,6 +28,19 @@ export const DocumentRepository = {
         return documents;
     },
 
+    async getDocumentById(id: number): Promise<Document | null> {
+        const document = await this.repo.findOne({
+            where: { id },
+            relations: ['fileVersions', 'folder'],
+        });
+        console.log(document);
+        if (!document) {
+            throw new Error(`Document with ID ${id} not found`);
+        }
+
+        return document;
+    },
+
     async deleteDocument(id: number): Promise<void> {
         await this.repo.delete(id);
     },
@@ -54,5 +67,35 @@ export const DocumentRepository = {
         await this.repo.save(document);
 
         return fileVersion;
+    },
+    async getFileVersionsForDocument(
+        documentId: number
+    ): Promise<FileVersion[]> {
+        console.log(`Fetching file versions for document ID: ${documentId}`);
+
+        try {
+            const document = await this.repo.findOne({
+                where: { id: documentId },
+                relations: ['fileVersions'],
+            });
+
+            if (!document) {
+                console.error(`Document with ID ${documentId} not found`);
+                return [];
+            }
+
+            if (!document.fileVersions || document.fileVersions.length === 0) {
+                console.log(
+                    `No file versions found for document ID ${documentId}`
+                );
+                return [];
+            }
+
+            console.log(`File versions found:`, document.fileVersions);
+            return document.fileVersions;
+        } catch (error) {
+            console.error('Error fetching file versions:', error);
+            throw new Error('Could not fetch file versions');
+        }
     },
 };

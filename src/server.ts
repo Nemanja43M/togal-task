@@ -1,5 +1,6 @@
 import express from 'express';
 import AppDataSource from './data-source';
+import cors from 'cors';
 
 import * as dotenv from 'dotenv';
 
@@ -8,8 +9,13 @@ import documentRoutes from './routes/DocumentRoutes';
 
 dotenv.config();
 const app = express();
-app.use(express.json());
 
+app.use(express.json());
+app.use(
+    cors({
+        origin: '*',
+    })
+);
 app.use('/api/folders', folderRoutes);
 app.use('/api/documents', documentRoutes);
 
